@@ -8,7 +8,7 @@ This mod does the following:
 ## How to use
 - Clone the repo with recursive submodules
 - Open the project in Visual Studio or CLion
-- Build the project
+- Build the project (Must be Release due to `std::wstring` having an extra field in Debug)
 - In the output folder (out/build), grab the following files:
   - LanternExampleMod.dll
     - This is the mod
