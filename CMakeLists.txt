@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.30)
 project(LanternExampleMod)
-set (CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 20)
 
 set(SRC_FILES
         pch.h
@@ -19,10 +19,9 @@ set(SRC_FILES
         Hooks/Minecraft.World/item/SwordItem.h
 )
 
-include(GenerateExportHeader)
 add_subdirectory(lib/Lantern)
 include_directories(lib/Lantern/lantern lib/Lantern/lantern/lib/detours .)
-link_directories(out/build/lib/Lantern out/build/lib/Lantern/lib/detours)
+link_directories(${CMAKE_SOURCE_DIR}/out/build/lib/Lantern ${CMAKE_SOURCE_DIR}/out/build/lib/Lantern/lib/detours)
 
 add_library(LanternExampleMod SHARED ${SRC_FILES})
 target_link_libraries(LanternExampleMod PRIVATE lib_detours ${CMAKE_SOURCE_DIR}/out/build/lib/Lantern/Lantern.lib)
